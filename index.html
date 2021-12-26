@@ -23,6 +23,8 @@
       <div class="col-2"></div>
       <div class="col-8">
 
+        <h1>HANKA - BETON</h1>
+
         <form id="hanka-beton" onsubmit='return onSubmit(this)'>
           <div class="form-row">
             <div class="form-group col-md-4">
@@ -171,9 +173,10 @@
       </div>
       <div class="col-2"></div>
     </div>
-
+<hr>
     <div class="row column">
       <h1>RESULT</h1>
+      <div class="col-2"></div>
       <div id="result"> </div>
     </div>
   </section>
@@ -221,7 +224,9 @@
         contentType: 'application/json',
         success: function(res) {
           console.log(res);
-          console.log("Added");
+          console.log(res['strengthMessage']);
+          console.log(res['errorMessage']);
+          $( "#result" ).append( res['strengthMessage'] + "<br>" + res['errorMessage']);
         }.bind(this),
         error: function(xhr, status, err) {
           console.error(xhr, status, err.toString());
