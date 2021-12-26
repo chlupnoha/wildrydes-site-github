@@ -226,7 +226,7 @@
           console.log(res);
           console.log(res['strengthMessage']);
           console.log(res['errorMessage']);
-          $( "#result" ).append( res['strengthMessage'] + "<br>" + res['errorMessage']);
+          $( "#result" ).empty().append( res['strengthMessage'] + "<br>" + res['errorMessage']);
         }.bind(this),
         error: function(xhr, status, err) {
           console.error(xhr, status, err.toString());
